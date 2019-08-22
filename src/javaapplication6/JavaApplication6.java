@@ -33,12 +33,13 @@ class notas implements Comparable<notas>{
         return no;
     }
     
+    //Public string que nos mostrara los datos del alumno
     @Override
    public String toString() {
         return "Carne: " + ca + " Nota: "+no;
     }
 
-    
+    // Funcion para ordenar array por nota mas alta
     @Override
     public int compareTo(notas t){ 
         return t.getNo().compareTo(no);
@@ -73,6 +74,7 @@ public class JavaApplication6 {
         Scanner not = new Scanner(System.in);
         
         int i;
+        //Sirve para escribir las notas y el carne y los manda a guardar en un arrayList
         for(i=0; i<4; i++){
             System.out.println("Carne #"+(i+1));
             carne[i] = not.nextInt();
@@ -81,9 +83,10 @@ public class JavaApplication6 {
             nt.add(new notas(carne[i], nota[i]));
         }
         
+        //Nos va ordenar los valores numericos de la nota
         Collections.sort(nt);  
        
-        
+        //NOS VA A MOSTRAR LOS DATOS QUE ESTAN EN EL toString
         for(notas aux: nt){
             System.out.println(aux);
         }
